@@ -65,7 +65,7 @@ for x in img_list:
             src = 'https://sticker.fpg.com.tw/' + src
         img_set.add(src)
 img_list_final=sorted(list(img_set))
-img_list_final = img_list_final[10:51]
+img_list_final = img_list_final[40:51]
 print(f"共找到 {len(img_set)} 張圖片，準備下載前 {len(img_list_final)} 張。")
 # #
 for x in img_list_final:
