@@ -70,7 +70,7 @@ print(f"共找到 {len(img_set)} 張圖片，準備下載前 {len(img_list_final
 # #
 for x in img_list_final:
     print("ok",x)
-dir_name = '../class21/data'
+dir_name = 'data'
 if not os.path.exists(dir_name):
     os.mkdir(dir_name)
 for i, x in enumerate(img_list_final):
@@ -87,11 +87,11 @@ print(f"共下載 {len(img_list_final)} 張圖片")
 # # 1.搜尋資料夾內有無.jpg的圖檔 glob('*.jpg)
 image_files=[]
 try:
-    image_files = list(Path("../class21/data/").glob("*.jpg"))
+    image_files = list(Path("data").glob("*.jpg"))
     if not image_files:
         raise FileNotFoundError
 except FileNotFoundError:
-    print(" 沒有找到 data/ 資料夾中的 JPG 圖片。請放入至少一張。")
+    print(" 沒有找到 data 資料夾中的 JPG 圖片。請放入至少一張。")
 #
 selected_image = random.choice(image_files)
 print(f"選中的圖片: {selected_image.name}")
