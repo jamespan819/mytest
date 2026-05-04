@@ -6,12 +6,13 @@ import datetime
 from opencc import OpenCC
 import cloudinary
 import cloudinary.uploader
+import os
 #
 # ##cloudinary 雲端 設定--begin
 cloudinary.config(
-    cloud_name="dvfikwdkj",
-    api_key="233866619965681",
-    api_secret="9QqqS86WnE082iskQ9bT3_EaM0s"
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET')
 )
 # ##cloudinary 雲端 設定--end
 #
@@ -127,7 +128,7 @@ print("網址為:",cloud_url)
 
 ## line 發送訊息設定--begin
 
-CHANNEL_ACCESS_TOKEN = "bkKI7Bo0ypBptJn6GWeW+v1CFBcHXBqVsThrt0L2oZ1hVJxG22Js1l+GVEZ+qxUC7ZE3XlgL06EQ4MjvMi33sCk6OmWxVLfVszPG9syKyqNuL6B94FwLyTLQ6xaR/qLUqus/4BSaiC+MBAmkxcM2ngdB04t89/1O/w1cDnyilFU="
+CHANNEL_ACCESS_TOKEN = os.environ.get('LINE_CHANNEL_ACCESS_TOKEN')
 # USER_ID = "Uf51ffd305ce026921198cca620f8b554"
 headers = {
     "Content-Type": "application/json",
